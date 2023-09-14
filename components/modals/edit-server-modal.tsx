@@ -113,8 +113,10 @@ export const EditServerModal = () => {
                 control={form.control}
                 name="name"
                 render={({ field }) => (
-                  <FormItem className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
-                    <FormLabel>Nome do Servidor</FormLabel>
+                  <FormItem>
+                    <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
+                      Nome do Servidor
+                    </FormLabel>
                     <FormControl>
                       <Input
                         disabled={isLoading}

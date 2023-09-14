@@ -104,8 +104,10 @@ export const InitialModal = () => {
                 control={form.control}
                 name="name"
                 render={({ field }) => (
-                  <FormItem className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
-                    <FormLabel>Server name</FormLabel>
+                  <FormItem>
+                    <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
+                      Server name
+                    </FormLabel>
                     <FormControl>
                       <Input
                         disabled={isLoading}
