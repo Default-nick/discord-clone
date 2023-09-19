@@ -56,10 +56,10 @@ export const AppCreatorModal = () => {
           desenvolvimento desta aplicação.
           <br />
           Este foi meu primeiro projeto full-stack, após quase 3 anos de
-          experiência apenas front-end com React. Não consigo expressar o quão
-          orgulhoso eu estou pelo desenvolvimento desta aplicação, aprendento
-          tanta coisa nova, conhecendo novas tecnologias... Devo agradecer tudo
-          isso à esta vídeo aula sensacional do canal{" "}
+          experiência apenas com front-end em React. Não consigo expressar o
+          quão orgulhoso eu estou pelo desenvolvimento desta aplicação,
+          aprendendo tanta coisa nova, conhecendo novas tecnologias... Devo
+          agradecer tudo isso à esta vídeo aula sensacional do canal{" "}
           <a
             href="https://www.youtube.com/watch?v=ZbX4Ok9YX94"
             target="_blank"
@@ -81,7 +81,7 @@ export const AppCreatorModal = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button variant="primary">
+                <Button variant="primary" size="lg">
                   <Github />
                 </Button>
               </a>
@@ -93,6 +93,7 @@ export const AppCreatorModal = () => {
             >
               <Button
                 variant="primary"
+                size="lg"
                 className={`transition ${
                   copied && "bg-lime-600 hover:bg-lime-800"
                 }`}
@@ -107,7 +108,7 @@ export const AppCreatorModal = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button variant="primary">
+                <Button variant="primary" size="lg">
                   <Linkedin />
                 </Button>
               </a>
