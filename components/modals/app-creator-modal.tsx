@@ -45,11 +45,11 @@ export const AppCreatorModal = () => {
           </DialogTitle>
         </DialogHeader>
 
-        <DialogDescription className="px-10 text-center">
+        <DialogDescription className="px-10 text-center text-zinc-500">
           <div className="flex items-center justify-center my-2">
             <UserAvatar
               src="https://avatars.githubusercontent.com/u/67932981?v=4"
-              className="h-15 w-15 md:w-12 md:h-12"
+              className="h-[70px] w-[70px] md:w-[108px] md:h-[108px]"
             />
           </div>
           Meu nome é Leandro e sou um desenvolvedor front-end, responsável pelo
@@ -70,43 +70,49 @@ export const AppCreatorModal = () => {
           </a>
         </DialogDescription>
         <DialogFooter className="bg-gray-100 px-6 py-4">
-          <ActionTooltip side="top" align="end" label="Confira mais projetos">
-            <a
-              href="https://github.com/Default-nick"
-              target="_blank"
-              rel="noreferrer"
+          <div className="flex items-center justify-between w-full">
+            <ActionTooltip
+              side="top"
+              align="start"
+              label="Confira mais projetos"
             >
-              <Button variant="primary">
-                <Github />
+              <a
+                href="https://github.com/Default-nick"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button variant="primary">
+                  <Github />
+                </Button>
+              </a>
+            </ActionTooltip>
+            <ActionTooltip
+              side="top"
+              align="center"
+              label={copied ? "E-mail copiado!" : "Copiar e-mail"}
+            >
+              <Button
+                variant="primary"
+                className={`transition ${
+                  copied && "bg-lime-600 hover:bg-lime-800"
+                }`}
+                onClick={onCopy}
+              >
+                {copied ? <CheckIcon /> : <Mail />}
               </Button>
-            </a>
-          </ActionTooltip>
-          <ActionTooltip
-            side="top"
-            align="end"
-            label={copied ? "E-mail copiado!" : "Copiar e-mail"}
-          >
-            <Button
-              variant="primary"
-              className={`transition ${
-                copied && "bg-lime-600 hover:bg-lime-800"
-              }`}
-              onClick={onCopy}
-            >
-              {copied ? <CheckIcon /> : <Mail />}
-            </Button>
-          </ActionTooltip>
-          <ActionTooltip side="top" align="end" label="Contato profissional">
-            <a
-              href="https://www.linkedin.com/in/le-alves/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Button variant="primary">
-                <Linkedin />
-              </Button>
-            </a>
-          </ActionTooltip>
+            </ActionTooltip>
+            <ActionTooltip side="top" align="end" label="Contato profissional">
+              <a
+                href="https://www.linkedin.com/in/le-alves/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button variant="primary">
+                  <Linkedin />
+                </Button>
+              </a>
+            </ActionTooltip>
+          </div>
         </DialogFooter>
       </DialogContent>
     </Dialog>
