@@ -12,6 +12,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
+import { CustomLabel } from "@/components/custom-label";
 
 interface ServerSearchProps {
   data: {
@@ -29,8 +30,21 @@ interface ServerSearchProps {
 
 export const ServerSearch = ({ data }: ServerSearchProps) => {
   const [open, setOpen] = useState(false);
+  const [labelText, setLabelText] = useState("CTRL + Y");
   const router = useRouter();
   const params = useParams();
+
+  useEffect(() => {
+    if (labelText === "CTRL + K") {
+      setTimeout(() => {
+        setLabelText("⌘ + K");
+      }, 5000);
+    } else {
+      setTimeout(() => {
+        setLabelText("CTRL + K");
+      }, 5000);
+    }
+  }, [labelText]);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -41,6 +55,7 @@ export const ServerSearch = ({ data }: ServerSearchProps) => {
     };
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onClick = ({
@@ -74,13 +89,7 @@ export const ServerSearch = ({ data }: ServerSearchProps) => {
         >
           Pesquisar
         </p>
-        <kbd
-          className="pointer-events-none inline-flex h-5 select-none
-        items-center gap-1 rounded border bg-muted px-1.5 font-mono
-        text-[10px] font-medium text-muted-foreground ml-auto"
-        >
-          <span className="text-xs">⌘</span>K
-        </kbd>
+        <CustomLabel labelText={labelText} />
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Procurar em todos os canais e membros" />
