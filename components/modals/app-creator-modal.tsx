@@ -45,15 +45,15 @@ export const AppCreatorModal = () => {
           </DialogTitle>
         </DialogHeader>
 
-        <DialogDescription className="px-10 text-center text-zinc-500">
+        <DialogDescription className="px-5 text-center text-zinc-500">
           <div className="flex items-center justify-center my-2">
             <UserAvatar
               src="https://avatars.githubusercontent.com/u/67932981?v=4"
               className="h-[70px] w-[70px] md:w-[108px] md:h-[108px]"
             />
           </div>
-          Meu nome é Leandro e sou um desenvolvedor front-end, responsável pelo
-          desenvolvimento desta aplicação.
+          Meu nome é Leandro e sou o desenvolvedor responsável por esta
+          aplicação.
           <br />
           Este foi meu primeiro projeto full-stack, após quase 3 anos de
           experiência apenas com front-end em React. Não consigo expressar o
