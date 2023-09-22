@@ -47,14 +47,14 @@ export const ServerSearch = ({ data }: ServerSearchProps) => {
   }, [labelText]);
 
   useEffect(() => {
-    const down = (e: KeyboardEvent) => {
+    const downK = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
       }
     };
-    document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
+    document.addEventListener("keydown", downK);
+    return () => document.removeEventListener("keydown", downK);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

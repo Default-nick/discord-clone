@@ -17,11 +17,15 @@ export const ChatWelcome = ({ name, type }: ChatWelcomeProps) => {
         </div>
       )}
       <p className="text-xl md:text-3xl font-bold">
-        {type === "channel" ? "Bem-vindo(a) a #" : ""} {name}
+        {type === "channel"
+          ? `Bem-vindo(a) a #${name.toLowerCase().replaceAll(" ", "-")}`
+          : `${name}`}
       </p>
       <p className="text-zinc-600 dark:text-zinc-400 text-sm">
         {type === "channel"
-          ? `Este é o começo do canal #${name}.`
+          ? `Este é o começo do canal #${name
+              .toLowerCase()
+              .replaceAll(" ", "-")}.`
           : `Este é o começo do seu histórico de mensagens diretas com ${name}`}
       </p>
     </div>

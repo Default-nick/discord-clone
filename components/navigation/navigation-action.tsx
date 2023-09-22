@@ -25,14 +25,14 @@ export const NavigationAction = () => {
   }, [labelText]);
 
   useEffect(() => {
-    const down = (e: KeyboardEvent) => {
+    const downY = (e: KeyboardEvent) => {
       if (e.key === "y" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         onOpen("appCreator");
       }
     };
-    document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
+    document.addEventListener("keydown", downY);
+    return () => document.removeEventListener("keydown", downY);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -43,6 +43,7 @@ export const NavigationAction = () => {
   if (!isMounted) {
     return null;
   }
+
   return (
     <div>
       <div className="mb-3 flex justify-center">
