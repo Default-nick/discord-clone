@@ -64,7 +64,7 @@ model Member {
   conversationsInitiated Conversation[] @relation("MemberOne")
   conversationsReceived  Conversation[] @relation("MemberTwo")
 
-  createdAT DateTime @default(now())
+  createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([profileId])

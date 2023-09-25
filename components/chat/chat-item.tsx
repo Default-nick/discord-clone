@@ -195,12 +195,12 @@ export const ChatItem = ({
               <div className="flex flex-row items-center">
                 {deleted && <ArrowUpLeftFromCircle className="mx-2 w-4 h-4" />}
                 {content}
+                {isUpdated && !deleted && (
+                  <span className="text-[10px] mx-2 text-zinc-500 dark:text-zinc-400">
+                    (Editado)
+                  </span>
+                )}
               </div>
-              {isUpdated && !deleted && (
-                <span className="text-[10px] mx-2 text-zinc-500 dark:text-zinc-400">
-                  (Editado)
-                </span>
-              )}
             </p>
           )}
           {!fileUrl && isEditing && (
