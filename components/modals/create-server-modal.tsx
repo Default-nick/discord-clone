@@ -33,7 +33,7 @@ const formSchema = z.object({
     message: "Nome do servidor é obrigatório.",
   }),
   imageUrl: z.string().min(1, {
-    message: "Server image é obrigatório.",
+    message: "Imagem do servidor é obrigatório.",
   }),
 });
 

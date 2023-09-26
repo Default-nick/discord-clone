@@ -8,7 +8,6 @@ import { useModal } from "@/hooks/use-modal-store";
 import { CustomLabel } from "@/components/custom-label";
 
 export const NavigationAction = () => {
-  const [isMounted, setIsMounted] = useState(false);
   const { onOpen } = useModal();
   const [labelText, setLabelText] = useState("CTRL + Y");
 
@@ -35,14 +34,6 @@ export const NavigationAction = () => {
     return () => document.removeEventListener("keydown", downY);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
 
   return (
     <div>

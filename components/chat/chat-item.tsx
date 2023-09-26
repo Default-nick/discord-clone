@@ -187,20 +187,18 @@ export const ChatItem = ({
           {!fileUrl && !isEditing && (
             <p
               className={cn(
-                "text-sm text-zinc-600 dark:text-zinc-300",
+                "text-sm text-zinc-600 dark:text-zinc-300 flex flex-row items-center",
                 deleted &&
                   "italic text-zinc-500 dark:text-zinc-400 text-xs mt-1"
               )}
             >
-              <div className="flex flex-row items-center">
-                {deleted && <ArrowUpLeftFromCircle className="mx-2 w-4 h-4" />}
-                {content}
-                {isUpdated && !deleted && (
-                  <span className="text-[10px] mx-2 text-zinc-500 dark:text-zinc-400">
-                    (Editado)
-                  </span>
-                )}
-              </div>
+              {deleted && <ArrowUpLeftFromCircle className="mx-2 w-4 h-4" />}
+              {content}
+              {isUpdated && !deleted && (
+                <span className="text-[10px] mx-2 text-zinc-500 dark:text-zinc-400">
+                  (Editado)
+                </span>
+              )}
             </p>
           )}
           {!fileUrl && isEditing && (
