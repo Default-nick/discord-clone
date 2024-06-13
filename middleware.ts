@@ -15,7 +15,7 @@ export default authMiddleware({
     }
     // redirect them to organization selection page
 
-    return NextResponse.redirect("/");
+    return NextResponse.redirect("https://discord-clone-default-nick.up.railway.app");
   },
 });
 
